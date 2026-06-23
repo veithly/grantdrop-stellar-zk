@@ -1,0 +1,28 @@
+{
+  "schema": "accepted-claim-report.v2",
+  "base_url": "http://127.0.0.1:4180",
+  "generated_at": "2026-06-23T10:18:20.121Z",
+  "started_at": "2026-06-23T10:18:07.956Z",
+  "pass": true,
+  "receipt": {
+    "url": "http://127.0.0.1:4180/receipts/gd_68dddc217d?r=eyJpZCI6ImdkXzY4ZGRkYzIxN2QiLCJjYW1wYWlnbklkIjoiemstYnVpbGRlci1taWNyb2dyYW50IiwiY2FtcGFpZ25UaXRsZSI6IlpLIEJ1aWxkZXIgTWljcm9ncmFudCIsIndhbGxldEFkZHJlc3MiOiJHRFpGUFdSTE9GVlJZMkxPVVZJRFFVN1VEVU5UWVlOVVJTTklVMzNVSzNIR09DQU4yN0RISllZUCIsInN0YXR1cyI6ImFjY2VwdGVkIiwibW9kZSI6InZhbGlkIiwibnVsbGlmaWVyIjoiMTYxMDgxMjM1MjMwIiwicHJvb2ZQb2xpY3lWZXJzaW9uIjoiZ3JhbnRkcm9wLWVsaWdpYmlsaXR5LXYxIiwicHJvb2YiOnsicHJvdG9jb2wiOiJncm90aDE2IiwicHVibGljU2lnbmFscyI6WyIxIiwiMTcwMSIsIjYzNzM1NTQxOCIsIjE2MTA4MTIzNTIzMCJdLCJwcm9vZkRpZ2VzdCI6ImE2ODc4YjhmYzlmOGQ4YTZmYTdjYWRhMzE2OGI4MGNjYzlhYTM1NzEwNzEwNDU2MDU3YTNkOGEwOTU0NGUxNTciLCJ2ZXJpZmljYXRpb25LZXlQYXRoIjoiL3Byb29mcy92ZXJpZmljYXRpb25fa2V5Lmpzb24iLCJ3YXNtUGF0aCI6Ii9wcm9vZnMvZ3JhbnRkcm9wLndhc20iLCJ6a2V5UGF0aCI6Ii9wcm9vZnMvZ3JhbnRkcm9wX2ZpbmFsLnprZXkifSwic3RlbGxhciI6eyJuZXR3b3JrIjoidGVzdG5ldCIsImFjY291bnQiOiJHRFpGUFdSTE9GVlJZMkxPVVZJRFFVN1VEVU5UWVlOVVJTTklVMzNVSzNIR09DQU4yN0RISllZUCIsInR4SGFzaCI6IjA5OGE5NDBiNDBhOTJmMTU2NTc1NzFkMzM0NTZiNjExMGE2Njk1MDNjYmZkNGQwOGQxM2YzZDc0ZjBiMTNjOWEiLCJsZWRnZXIiOjMyMzkyMTgsIm9wZXJhdGlvbiI6Im1hbmFnZURhdGEiLCJpbnNwZWN0VXJsIjoiaHR0cHM6Ly9zdGVsbGFyLmV4cGVydC9leHBsb3Jlci90ZXN0bmV0L3R4LzA5OGE5NDBiNDBhOTJmMTU2NTc1NzFkMzM0NTZiNjExMGE2Njk1MDNjYmZkNGQwOGQxM2YzZDc0ZjBiMTNjOWEifSwiY3JlYXRlZEF0IjoiMjAyNi0wNi0yM1QxMDoxODowOC42MzdaIn0",
+    "receiptId": "gd_68dddc217d",
+    "wallet": "GDZFPWRL...DHJYYP",
+    "nullifier": "161081235230",
+    "stellarRefShort": "098a940b...b13c9a",
+    "publicInputs": "1, 1701, 637355418, 161081235230",
+    "inspectText": "Proof and Stellar evidenceProtocolgroth16Public inputs1, 1701, 637355418, 161081235230Proof digesta6878b8fc9f8...a09544e157Stellar reference098a940b40a92f15657571d33456b6110a669503cbfd4d08d13f3d74f0b13c9anpm run proof:verify && open https://stellar.expert/explorer/testnet/tx/098a940b40a92f15657571d33456b6110a669503cbfd4d08d13f3d74f0b13c9aOpen Stellar expert",
+    "stellarExpertUrl": "https://stellar.expert/explorer/testnet/tx/098a940b40a92f15657571d33456b6110a669503cbfd4d08d13f3d74f0b13c9a"
+  },
+  "second_context": {
+    "url": "http://127.0.0.1:4180/receipts/gd_68dddc217d?r=eyJpZCI6ImdkXzY4ZGRkYzIxN2QiLCJjYW1wYWlnbklkIjoiemstYnVpbGRlci1taWNyb2dyYW50IiwiY2FtcGFpZ25UaXRsZSI6IlpLIEJ1aWxkZXIgTWljcm9ncmFudCIsIndhbGxldEFkZHJlc3MiOiJHRFpGUFdSTE9GVlJZMkxPVVZJRFFVN1VEVU5UWVlOVVJTTklVMzNVSzNIR09DQU4yN0RISllZUCIsInN0YXR1cyI6ImFjY2VwdGVkIiwibW9kZSI6InZhbGlkIiwibnVsbGlmaWVyIjoiMTYxMDgxMjM1MjMwIiwicHJvb2ZQb2xpY3lWZXJzaW9uIjoiZ3JhbnRkcm9wLWVsaWdpYmlsaXR5LXYxIiwicHJvb2YiOnsicHJvdG9jb2wiOiJncm90aDE2IiwicHVibGljU2lnbmFscyI6WyIxIiwiMTcwMSIsIjYzNzM1NTQxOCIsIjE2MTA4MTIzNTIzMCJdLCJwcm9vZkRpZ2VzdCI6ImE2ODc4YjhmYzlmOGQ4YTZmYTdjYWRhMzE2OGI4MGNjYzlhYTM1NzEwNzEwNDU2MDU3YTNkOGEwOTU0NGUxNTciLCJ2ZXJpZmljYXRpb25LZXlQYXRoIjoiL3Byb29mcy92ZXJpZmljYXRpb25fa2V5Lmpzb24iLCJ3YXNtUGF0aCI6Ii9wcm9vZnMvZ3JhbnRkcm9wLndhc20iLCJ6a2V5UGF0aCI6Ii9wcm9vZnMvZ3JhbnRkcm9wX2ZpbmFsLnprZXkifSwic3RlbGxhciI6eyJuZXR3b3JrIjoidGVzdG5ldCIsImFjY291bnQiOiJHRFpGUFdSTE9GVlJZMkxPVVZJRFFVN1VEVU5UWVlOVVJTTklVMzNVSzNIR09DQU4yN0RISllZUCIsInR4SGFzaCI6IjA5OGE5NDBiNDBhOTJmMTU2NTc1NzFkMzM0NTZiNjExMGE2Njk1MDNjYmZkNGQwOGQxM2YzZDc0ZjBiMTNjOWEiLCJsZWRnZXIiOjMyMzkyMTgsIm9wZXJhdGlvbiI6Im1hbmFnZURhdGEiLCJpbnNwZWN0VXJsIjoiaHR0cHM6Ly9zdGVsbGFyLmV4cGVydC9leHBsb3Jlci90ZXN0bmV0L3R4LzA5OGE5NDBiNDBhOTJmMTU2NTc1NzFkMzM0NTZiNjExMGE2Njk1MDNjYmZkNGQwOGQxM2YzZDc0ZjBiMTNjOWEifSwiY3JlYXRlZEF0IjoiMjAyNi0wNi0yM1QxMDoxODowOC42MzdaIn0",
+    "receiptId": "gd_68dddc217d",
+    "stellarRefShort": "098a940b...b13c9a",
+    "readonly": true
+  },
+  "screenshot": ".hunter/runtime-artifacts/accepted-claim-chromium.png",
+  "second_context_screenshot": ".hunter/runtime-artifacts/accepted-receipt-second-context.png",
+  "warnings": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

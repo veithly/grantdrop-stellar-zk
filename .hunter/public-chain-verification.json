@@ -1,0 +1,28 @@
+{
+  "schema": "public-chain-verification.v1",
+  "generated_at": "2026-06-23T10:29:30.9648678Z",
+  "base_url": "https://grantdrop-stellar-zk.pages.dev",
+  "source_report": ".hunter/public-smoke.report.json",
+  "transactions": [
+    {
+      "target": "desktop",
+      "status": 200,
+      "hash": "8f1c02844548ac0c93ef30037d91aa9cee78e6c5c51e25d3cb5bb20656078cba",
+      "ledger": 3239319,
+      "successful": true,
+      "created_at": "2026-06-23T10:26:32Z",
+      "source_account": "GD3MHBBSAVJZPRDUL44HOPTXG7KGQWPWKZDVKHXJB2GXGB5NYMPVS6CR",
+      "horizon_url": "https://horizon-testnet.stellar.org/transactions/8f1c02844548ac0c93ef30037d91aa9cee78e6c5c51e25d3cb5bb20656078cba"
+    },
+    {
+      "target": "mobile-pixel7",
+      "status": 200,
+      "hash": "0c41c4eafa4ec8f110ac32fd3783ac4252e3bc1378b7a246759234c0d2703960",
+      "ledger": 3239330,
+      "successful": true,
+      "created_at": "2026-06-23T10:27:27Z",
+      "source_account": "GBJSX7JQLGA5IZJYHWV5MTWFMYRM72XDVMX3VA3KD5IFAVNQTTIIPZPA",
+      "horizon_url": "https://horizon-testnet.stellar.org/transactions/0c41c4eafa4ec8f110ac32fd3783ac4252e3bc1378b7a246759234c0d2703960"
+    }
+  ]
+}

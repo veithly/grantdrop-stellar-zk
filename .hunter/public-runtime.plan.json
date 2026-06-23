@@ -1,0 +1,36 @@
+{
+  "base_url": "https://grantdrop-stellar-zk.pages.dev",
+  "report_path": ".hunter/public-runtime.report.json",
+  "artifact_dir": ".hunter/public-runtime-artifacts",
+  "browsers": ["chromium", "firefox", "webkit"],
+  "devices": [
+    { "name": "Pixel 7", "browser": "chromium", "viewport": { "width": 393, "height": 852 }, "mobile": true }
+  ],
+  "cases": [
+    {
+      "name": "public fresh claimant can operate the booth",
+      "context": "public fresh browser context",
+      "steps": [
+        { "action": "goto", "path": "/campaigns/zk-builder-microgrant" },
+        { "action": "assertVisible", "selector": "[data-hero-text]" },
+        { "action": "assertText", "text": "Claim a Stellar grant receipt without exposing why you qualify." },
+        { "action": "click", "role": "button", "name": "Invalid input" },
+        { "action": "click", "role": "button", "name": "Use testnet signer" },
+        { "action": "assertText", "text": "Client-side Stellar testnet signer" },
+        { "action": "reload" },
+        { "action": "assertVisible", "selector": "[data-cta-primary]" }
+      ]
+    },
+    {
+      "name": "public second context can open receipt recovery route",
+      "context": "public second context receipt viewer",
+      "steps": [
+        { "action": "goto", "path": "/receipts/not-yet-created" },
+        { "action": "assertText", "text": "Receipt not found" },
+        { "action": "assertText", "text": "Return to campaign" },
+        { "action": "click", "text": "Return to campaign" },
+        { "action": "assertText", "text": "Claim a Stellar grant receipt without exposing why you qualify." }
+      ]
+    }
+  ]
+}

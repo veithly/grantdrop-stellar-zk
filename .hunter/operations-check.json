@@ -1,0 +1,11 @@
+{
+  "schema": "operations-check.v1",
+  "fresh_user_hero_path": "Playwright runtime report uses fresh context browser runs for /campaigns/zk-builder-microgrant across Chromium, Firefox, WebKit, and Pixel 7.",
+  "public_access": "Guest public access requires no login, no builder account, and no wallet for receipt replay; claiming uses a client-side testnet signer created in the browser.",
+  "reset_or_seed_strategy": "Each claim run creates an isolated client signer and receipt id; fresh browser contexts reset IndexedDB state, while duplicate-claim behavior is scoped by nullifier.",
+  "abuse_limits": "Per-session testnet signer and one-claim nullifier limit cap repeat claims; Friendbot/testnet spend is isolated from custody and mainnet value.",
+  "second_context_or_role_proof": "The runtime report includes a second context public receipt viewer case for /receipts/not-yet-created and a Return to campaign recovery path.",
+  "support_contact_or_failure_state": "Failure states cover proof rejection, already-claimed receipts, tx failed receipts, missing receipt recovery, and retry through the campaign route.",
+  "runtime_interaction_report": ".hunter/runtime-interaction.report.json",
+  "last_verified_at": "2026-06-23T11:13:03.503Z"
+}

@@ -1,0 +1,940 @@
+{
+  "schema": "runtime-interaction-report.v2",
+  "base_url": "https://grantdrop-stellar-zk.pages.dev",
+  "plan_path": "C:\\Users\\Ricky\\Documents\\Project\\Hackathon\\stellar-hacks-zk\\.hunter\\public-runtime.plan.json",
+  "generated_at": "2026-06-23T10:20:44.543Z",
+  "pass": true,
+  "metrics": {
+    "case_count": 2,
+    "target_count": 4,
+    "target_passed": 4,
+    "browser_count": 3,
+    "browsers_passed": 3,
+    "mobile_context": true,
+    "trace_on_failure": true,
+    "user_action_count": 12,
+    "reload_assertion": true,
+    "second_context": true,
+    "console_errors": 0,
+    "failed_requests": 0,
+    "runtime_smells": 0
+  },
+  "targets": [
+    {
+      "name": "chromium",
+      "browser": "chromium",
+      "device": null,
+      "mobile": false,
+      "pass": true,
+      "cases": [
+        {
+          "name": "public fresh claimant can operate the booth",
+          "context": "public fresh browser context",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/campaigns/zk-builder-microgrant",
+              "pass": true,
+              "elapsed_ms": 1786
+            },
+            {
+              "action": "assertVisible",
+              "selector": "[data-hero-text]",
+              "pass": true,
+              "elapsed_ms": 41
+            },
+            {
+              "action": "assertText",
+              "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+              "pass": true,
+              "elapsed_ms": 13
+            },
+            {
+              "action": "click",
+              "role": "button",
+              "pass": true,
+              "elapsed_ms": 57
+            },
+            {
+              "action": "click",
+              "role": "button",
+              "pass": true,
+              "elapsed_ms": 40
+            },
+            {
+              "action": "assertText",
+              "text": "Client-side Stellar testnet signer",
+              "pass": true,
+              "elapsed_ms": 827
+            },
+            {
+              "action": "reload",
+              "pass": true,
+              "elapsed_ms": 349
+            },
+            {
+              "action": "assertVisible",
+              "selector": "[data-cta-primary]",
+              "pass": true,
+              "elapsed_ms": 19
+            }
+          ],
+          "pass": true,
+          "runtime_scan": {
+            "textLength": 874,
+            "clickableCount": 6,
+            "questionableControlCount": 0,
+            "smells": []
+          },
+          "trace": null,
+          "screenshot": null
+        },
+        {
+          "name": "public second context can open receipt recovery route",
+          "context": "public second context receipt viewer",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/receipts/not-yet-created",
+              "pass": true,
+              "elapsed_ms": 1355
+            },
+            {
+              "action": "assertText",
+              "text": "Receipt not found",
+              "pass": true,
+              "elapsed_ms": 37
+            },
+            {
+              "action": "assertText",
+              "text": "Return to campaign",
+              "pass": true,
+              "elapsed_ms": 8
+            },
+            {
+              "action": "click",
+              "text": "Return to campaign",
+              "pass": true,
+              "elapsed_ms": 175
+            },
+            {
+              "action": "assertText",
+              "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+              "pass": true,
+              "elapsed_ms": 224
+            }
+          ],
+          "pass": true,
+          "runtime_scan": {
+            "textLength": 874,
+            "clickableCount": 6,
+            "questionableControlCount": 0,
+            "smells": []
+          },
+          "trace": null,
+          "screenshot": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "firefox",
+      "browser": "firefox",
+      "device": null,
+      "mobile": false,
+      "pass": true,
+      "cases": [
+        {
+          "name": "public fresh claimant can operate the booth",
+          "context": "public fresh browser context",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/campaigns/zk-builder-microgrant",
+              "pass": true,
+              "elapsed_ms": 1705
+            },
+            {
+              "action": "assertVisible",
+              "selector": "[data-hero-text]",
+              "pass": true,
+              "elapsed_ms": 44
+            },
+            {
+              "action": "assertText",
+              "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+              "pass": true,
+              "elapsed_ms": 17
+            },
+            {
+              "action": "click",
+              "role": "button",
+              "pass": true,
+              "elapsed_ms": 80
+            },
+            {
+              "action": "click",
+              "role": "button",
+              "pass": true,
+              "elapsed_ms": 66
+            },
+            {
+              "action": "assertText",
+              "text": "Client-side Stellar testnet signer",
+              "pass": true,
+              "elapsed_ms": 364
+            },
+            {
+              "action": "reload",
+              "pass": true,
+              "elapsed_ms": 636
+            },
+            {
+              "action": "assertVisible",
+              "selector": "[data-cta-primary]",
+              "pass": true,
+              "elapsed_ms": 44
+            }
+          ],
+          "pass": true,
+          "runtime_scan": {
+            "textLength": 874,
+            "clickableCount": 6,
+            "questionableControlCount": 0,
+            "smells": []
+          },
+          "trace": null,
+          "screenshot": null
+        },
+        {
+          "name": "public second context can open receipt recovery route",
+          "context": "public second context receipt viewer",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/receipts/not-yet-created",
+              "pass": true,
+              "elapsed_ms": 1138
+            },
+            {
+              "action": "assertText",
+              "text": "Receipt not found",
+              "pass": true,
+              "elapsed_ms": 78
+            },
+            {
+              "action": "assertText",
+              "text": "Return to campaign",
+              "pass": true,
+              "elapsed_ms": 13
+            },
+            {
+              "action": "click",
+              "text": "Return to campaign",
+              "pass": true,
+              "elapsed_ms": 271
+            },
+            {
+              "action": "assertText",
+              "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+              "pass": true,
+              "elapsed_ms": 248
+            }
+          ],
+          "pass": true,
+          "runtime_scan": {
+            "textLength": 874,
+            "clickableCount": 6,
+            "questionableControlCount": 0,
+            "smells": []
+          },
+          "trace": null,
+          "screenshot": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "webkit",
+      "browser": "webkit",
+      "device": null,
+      "mobile": false,
+      "pass": true,
+      "cases": [
+        {
+          "name": "public fresh claimant can operate the booth",
+          "context": "public fresh browser context",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/campaigns/zk-builder-microgrant",
+              "pass": true,
+              "elapsed_ms": 3689
+            },
+            {
+              "action": "assertVisible",
+              "selector": "[data-hero-text]",
+              "pass": true,
+              "elapsed_ms": 113
+            },
+            {
+              "action": "assertText",
+              "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+              "pass": true,
+              "elapsed_ms": 35
+            },
+            {
+              "action": "click",
+              "role": "button",
+              "pass": true,
+              "elapsed_ms": 1109
+            },
+            {
+              "action": "click",
+              "role": "button",
+              "pass": true,
+              "elapsed_ms": 615
+            },
+            {
+              "action": "assertText",
+              "text": "Client-side Stellar testnet signer",
+              "pass": true,
+              "elapsed_ms": 1698
+            },
+            {
+              "action": "reload",
+              "pass": true,
+              "elapsed_ms": 1133
+            },
+            {
+              "action": "assertVisible",
+              "selector": "[data-cta-primary]",
+              "pass": true,
+              "elapsed_ms": 329
+            }
+          ],
+          "pass": true,
+          "runtime_scan": {
+            "textLength": 876,
+            "clickableCount": 6,
+            "questionableControlCount": 0,
+            "smells": []
+          },
+          "trace": null,
+          "screenshot": null
+        },
+        {
+          "name": "public second context can open receipt recovery route",
+          "context": "public second context receipt viewer",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/receipts/not-yet-created",
+              "pass": true,
+              "elapsed_ms": 3204
+            },
+            {
+              "action": "assertText",
+              "text": "Receipt not found",
+              "pass": true,
+              "elapsed_ms": 89
+            },
+            {
+              "action": "assertText",
+              "text": "Return to campaign",
+              "pass": true,
+              "elapsed_ms": 46
+            },
+            {
+              "action": "click",
+              "text": "Return to campaign",
+              "pass": true,
+              "elapsed_ms": 1281
+            },
+            {
+              "action": "assertText",
+              "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+              "pass": true,
+              "elapsed_ms": 373
+            }
+          ],
+          "pass": true,
+          "runtime_scan": {
+            "textLength": 876,
+            "clickableCount": 6,
+            "questionableControlCount": 0,
+            "smells": []
+          },
+          "trace": null,
+          "screenshot": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Pixel 7",
+      "browser": "chromium",
+      "device": null,
+      "mobile": true,
+      "pass": true,
+      "cases": [
+        {
+          "name": "public fresh claimant can operate the booth",
+          "context": "public fresh browser context",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/campaigns/zk-builder-microgrant",
+              "pass": true,
+              "elapsed_ms": 1233
+            },
+            {
+              "action": "assertVisible",
+              "selector": "[data-hero-text]",
+              "pass": true,
+              "elapsed_ms": 29
+            },
+            {
+              "action": "assertText",
+              "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+              "pass": true,
+              "elapsed_ms": 8
+            },
+            {
+              "action": "click",
+              "role": "button",
+              "pass": true,
+              "elapsed_ms": 59
+            },
+            {
+              "action": "click",
+              "role": "button",
+              "pass": true,
+              "elapsed_ms": 47
+            },
+            {
+              "action": "assertText",
+              "text": "Client-side Stellar testnet signer",
+              "pass": true,
+              "elapsed_ms": 325
+            },
+            {
+              "action": "reload",
+              "pass": true,
+              "elapsed_ms": 386
+            },
+            {
+              "action": "assertVisible",
+              "selector": "[data-cta-primary]",
+              "pass": true,
+              "elapsed_ms": 19
+            }
+          ],
+          "pass": true,
+          "runtime_scan": {
+            "textLength": 874,
+            "clickableCount": 6,
+            "questionableControlCount": 0,
+            "smells": []
+          },
+          "trace": null,
+          "screenshot": null
+        },
+        {
+          "name": "public second context can open receipt recovery route",
+          "context": "public second context receipt viewer",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/receipts/not-yet-created",
+              "pass": true,
+              "elapsed_ms": 1375
+            },
+            {
+              "action": "assertText",
+              "text": "Receipt not found",
+              "pass": true,
+              "elapsed_ms": 38
+            },
+            {
+              "action": "assertText",
+              "text": "Return to campaign",
+              "pass": true,
+              "elapsed_ms": 7
+            },
+            {
+              "action": "click",
+              "text": "Return to campaign",
+              "pass": true,
+              "elapsed_ms": 178
+            },
+            {
+              "action": "assertText",
+              "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+              "pass": true,
+              "elapsed_ms": 271
+            }
+          ],
+          "pass": true,
+          "runtime_scan": {
+            "textLength": 874,
+            "clickableCount": 6,
+            "questionableControlCount": 0,
+            "smells": []
+          },
+          "trace": null,
+          "screenshot": null
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "cases": [
+    {
+      "name": "public fresh claimant can operate the booth",
+      "context": "public fresh browser context",
+      "steps": [
+        {
+          "action": "goto",
+          "path": "/campaigns/zk-builder-microgrant",
+          "pass": true,
+          "elapsed_ms": 1786
+        },
+        {
+          "action": "assertVisible",
+          "selector": "[data-hero-text]",
+          "pass": true,
+          "elapsed_ms": 41
+        },
+        {
+          "action": "assertText",
+          "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+          "pass": true,
+          "elapsed_ms": 13
+        },
+        {
+          "action": "click",
+          "role": "button",
+          "pass": true,
+          "elapsed_ms": 57
+        },
+        {
+          "action": "click",
+          "role": "button",
+          "pass": true,
+          "elapsed_ms": 40
+        },
+        {
+          "action": "assertText",
+          "text": "Client-side Stellar testnet signer",
+          "pass": true,
+          "elapsed_ms": 827
+        },
+        {
+          "action": "reload",
+          "pass": true,
+          "elapsed_ms": 349
+        },
+        {
+          "action": "assertVisible",
+          "selector": "[data-cta-primary]",
+          "pass": true,
+          "elapsed_ms": 19
+        }
+      ],
+      "pass": true,
+      "runtime_scan": {
+        "textLength": 874,
+        "clickableCount": 6,
+        "questionableControlCount": 0,
+        "smells": []
+      },
+      "trace": null,
+      "screenshot": null,
+      "target": "chromium",
+      "browser": "chromium"
+    },
+    {
+      "name": "public second context can open receipt recovery route",
+      "context": "public second context receipt viewer",
+      "steps": [
+        {
+          "action": "goto",
+          "path": "/receipts/not-yet-created",
+          "pass": true,
+          "elapsed_ms": 1355
+        },
+        {
+          "action": "assertText",
+          "text": "Receipt not found",
+          "pass": true,
+          "elapsed_ms": 37
+        },
+        {
+          "action": "assertText",
+          "text": "Return to campaign",
+          "pass": true,
+          "elapsed_ms": 8
+        },
+        {
+          "action": "click",
+          "text": "Return to campaign",
+          "pass": true,
+          "elapsed_ms": 175
+        },
+        {
+          "action": "assertText",
+          "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+          "pass": true,
+          "elapsed_ms": 224
+        }
+      ],
+      "pass": true,
+      "runtime_scan": {
+        "textLength": 874,
+        "clickableCount": 6,
+        "questionableControlCount": 0,
+        "smells": []
+      },
+      "trace": null,
+      "screenshot": null,
+      "target": "chromium",
+      "browser": "chromium"
+    },
+    {
+      "name": "public fresh claimant can operate the booth",
+      "context": "public fresh browser context",
+      "steps": [
+        {
+          "action": "goto",
+          "path": "/campaigns/zk-builder-microgrant",
+          "pass": true,
+          "elapsed_ms": 1705
+        },
+        {
+          "action": "assertVisible",
+          "selector": "[data-hero-text]",
+          "pass": true,
+          "elapsed_ms": 44
+        },
+        {
+          "action": "assertText",
+          "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+          "pass": true,
+          "elapsed_ms": 17
+        },
+        {
+          "action": "click",
+          "role": "button",
+          "pass": true,
+          "elapsed_ms": 80
+        },
+        {
+          "action": "click",
+          "role": "button",
+          "pass": true,
+          "elapsed_ms": 66
+        },
+        {
+          "action": "assertText",
+          "text": "Client-side Stellar testnet signer",
+          "pass": true,
+          "elapsed_ms": 364
+        },
+        {
+          "action": "reload",
+          "pass": true,
+          "elapsed_ms": 636
+        },
+        {
+          "action": "assertVisible",
+          "selector": "[data-cta-primary]",
+          "pass": true,
+          "elapsed_ms": 44
+        }
+      ],
+      "pass": true,
+      "runtime_scan": {
+        "textLength": 874,
+        "clickableCount": 6,
+        "questionableControlCount": 0,
+        "smells": []
+      },
+      "trace": null,
+      "screenshot": null,
+      "target": "firefox",
+      "browser": "firefox"
+    },
+    {
+      "name": "public second context can open receipt recovery route",
+      "context": "public second context receipt viewer",
+      "steps": [
+        {
+          "action": "goto",
+          "path": "/receipts/not-yet-created",
+          "pass": true,
+          "elapsed_ms": 1138
+        },
+        {
+          "action": "assertText",
+          "text": "Receipt not found",
+          "pass": true,
+          "elapsed_ms": 78
+        },
+        {
+          "action": "assertText",
+          "text": "Return to campaign",
+          "pass": true,
+          "elapsed_ms": 13
+        },
+        {
+          "action": "click",
+          "text": "Return to campaign",
+          "pass": true,
+          "elapsed_ms": 271
+        },
+        {
+          "action": "assertText",
+          "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+          "pass": true,
+          "elapsed_ms": 248
+        }
+      ],
+      "pass": true,
+      "runtime_scan": {
+        "textLength": 874,
+        "clickableCount": 6,
+        "questionableControlCount": 0,
+        "smells": []
+      },
+      "trace": null,
+      "screenshot": null,
+      "target": "firefox",
+      "browser": "firefox"
+    },
+    {
+      "name": "public fresh claimant can operate the booth",
+      "context": "public fresh browser context",
+      "steps": [
+        {
+          "action": "goto",
+          "path": "/campaigns/zk-builder-microgrant",
+          "pass": true,
+          "elapsed_ms": 3689
+        },
+        {
+          "action": "assertVisible",
+          "selector": "[data-hero-text]",
+          "pass": true,
+          "elapsed_ms": 113
+        },
+        {
+          "action": "assertText",
+          "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+          "pass": true,
+          "elapsed_ms": 35
+        },
+        {
+          "action": "click",
+          "role": "button",
+          "pass": true,
+          "elapsed_ms": 1109
+        },
+        {
+          "action": "click",
+          "role": "button",
+          "pass": true,
+          "elapsed_ms": 615
+        },
+        {
+          "action": "assertText",
+          "text": "Client-side Stellar testnet signer",
+          "pass": true,
+          "elapsed_ms": 1698
+        },
+        {
+          "action": "reload",
+          "pass": true,
+          "elapsed_ms": 1133
+        },
+        {
+          "action": "assertVisible",
+          "selector": "[data-cta-primary]",
+          "pass": true,
+          "elapsed_ms": 329
+        }
+      ],
+      "pass": true,
+      "runtime_scan": {
+        "textLength": 876,
+        "clickableCount": 6,
+        "questionableControlCount": 0,
+        "smells": []
+      },
+      "trace": null,
+      "screenshot": null,
+      "target": "webkit",
+      "browser": "webkit"
+    },
+    {
+      "name": "public second context can open receipt recovery route",
+      "context": "public second context receipt viewer",
+      "steps": [
+        {
+          "action": "goto",
+          "path": "/receipts/not-yet-created",
+          "pass": true,
+          "elapsed_ms": 3204
+        },
+        {
+          "action": "assertText",
+          "text": "Receipt not found",
+          "pass": true,
+          "elapsed_ms": 89
+        },
+        {
+          "action": "assertText",
+          "text": "Return to campaign",
+          "pass": true,
+          "elapsed_ms": 46
+        },
+        {
+          "action": "click",
+          "text": "Return to campaign",
+          "pass": true,
+          "elapsed_ms": 1281
+        },
+        {
+          "action": "assertText",
+          "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+          "pass": true,
+          "elapsed_ms": 373
+        }
+      ],
+      "pass": true,
+      "runtime_scan": {
+        "textLength": 876,
+        "clickableCount": 6,
+        "questionableControlCount": 0,
+        "smells": []
+      },
+      "trace": null,
+      "screenshot": null,
+      "target": "webkit",
+      "browser": "webkit"
+    },
+    {
+      "name": "public fresh claimant can operate the booth",
+      "context": "public fresh browser context",
+      "steps": [
+        {
+          "action": "goto",
+          "path": "/campaigns/zk-builder-microgrant",
+          "pass": true,
+          "elapsed_ms": 1233
+        },
+        {
+          "action": "assertVisible",
+          "selector": "[data-hero-text]",
+          "pass": true,
+          "elapsed_ms": 29
+        },
+        {
+          "action": "assertText",
+          "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+          "pass": true,
+          "elapsed_ms": 8
+        },
+        {
+          "action": "click",
+          "role": "button",
+          "pass": true,
+          "elapsed_ms": 59
+        },
+        {
+          "action": "click",
+          "role": "button",
+          "pass": true,
+          "elapsed_ms": 47
+        },
+        {
+          "action": "assertText",
+          "text": "Client-side Stellar testnet signer",
+          "pass": true,
+          "elapsed_ms": 325
+        },
+        {
+          "action": "reload",
+          "pass": true,
+          "elapsed_ms": 386
+        },
+        {
+          "action": "assertVisible",
+          "selector": "[data-cta-primary]",
+          "pass": true,
+          "elapsed_ms": 19
+        }
+      ],
+      "pass": true,
+      "runtime_scan": {
+        "textLength": 874,
+        "clickableCount": 6,
+        "questionableControlCount": 0,
+        "smells": []
+      },
+      "trace": null,
+      "screenshot": null,
+      "target": "Pixel 7",
+      "browser": "chromium"
+    },
+    {
+      "name": "public second context can open receipt recovery route",
+      "context": "public second context receipt viewer",
+      "steps": [
+        {
+          "action": "goto",
+          "path": "/receipts/not-yet-created",
+          "pass": true,
+          "elapsed_ms": 1375
+        },
+        {
+          "action": "assertText",
+          "text": "Receipt not found",
+          "pass": true,
+          "elapsed_ms": 38
+        },
+        {
+          "action": "assertText",
+          "text": "Return to campaign",
+          "pass": true,
+          "elapsed_ms": 7
+        },
+        {
+          "action": "click",
+          "text": "Return to campaign",
+          "pass": true,
+          "elapsed_ms": 178
+        },
+        {
+          "action": "assertText",
+          "text": "Claim a Stellar grant receipt without exposing why you qualify.",
+          "pass": true,
+          "elapsed_ms": 271
+        }
+      ],
+      "pass": true,
+      "runtime_scan": {
+        "textLength": 874,
+        "clickableCount": 6,
+        "questionableControlCount": 0,
+        "smells": []
+      },
+      "trace": null,
+      "screenshot": null,
+      "target": "Pixel 7",
+      "browser": "chromium"
+    }
+  ],
+  "errors": [],
+  "launcher_note": "Chromium/Firefox use HackathonHunter Playwright 1.61; WebKit uses project-local Playwright 1.49 because 1.61 WebKit hung on local HTTP in this Windows environment."
+}

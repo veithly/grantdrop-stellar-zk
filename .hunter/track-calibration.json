@@ -1,0 +1,114 @@
+{
+  "challenge_type": "open Web3/ZK hackathon",
+  "hackathon_url": "https://dorahacks.io/hackathon/stellar-hacks-zk/detail",
+  "hackathon_content_language": "English",
+  "language_source_url": "https://dorahacks.io/hackathon/stellar-hacks-zk/detail",
+  "language_source_sample": "Stellar Hacks: Real-World ZK",
+  "user_requested_language": "Agent updates follow the user's chat language; project artifacts use English unless mirrored docs are needed",
+  "project_language": "English",
+  "project_language_reason": "DoraHacks page, submission surface, and public judging language are English.",
+  "deadline": "2026-06-29T12:00:00-08:00",
+  "platform": "DoraHacks",
+  "prize_targets": [
+    "First Place: $5,000 in XLM",
+    "Second Place: $2,000 in XLM",
+    "Third Place: $1,250 in XLM",
+    "Fourth Place: $1,000 in XLM",
+    "Fifth Place: $750 in XLM"
+  ],
+  "primary_prize": "First Place open innovation track",
+  "backup_prize": "Top-five open innovation award",
+  "non_primary_prizes_to_ignore": [],
+  "selected_prize_or_track": "Single open innovation track for Real-World ZK on Stellar",
+  "judging_criteria": {
+    "explicit": "No weighted rubric published on the captured DoraHacks page.",
+    "inferred_from_requirements": [
+      "ZK is meaningful and load-bearing",
+      "Stellar integration is real and inspectable",
+      "Project works and is clearly explained",
+      "Public repo and 2-3 minute demo video are present"
+    ]
+  },
+  "sponsor_or_domain_primitives": [
+    "Stellar",
+    "Soroban smart contracts",
+    "zero-knowledge proof verification",
+    "testnet/mainnet transaction or contract state",
+    "Circom/Noir/RISC Zero proof systems"
+  ],
+  "submission_fields": [
+    "open-source repo URL",
+    "demo video URL",
+    "project description",
+    "working demo URL if available"
+  ],
+  "demo_format": "2-3 minute walkthrough video plus public repository",
+  "first_surfaces_judges_see": [
+    "DoraHacks project card",
+    "demo video",
+    "live/local app",
+    "GitHub repository",
+    "README"
+  ],
+  "must_prove_before_submission": [
+    "Fresh user can perform the hero action",
+    "ZK proof changes product outcome",
+    "Stellar contract, transaction, or testnet state is inspectable",
+    "README explains proof generation, verification, and limitations honestly"
+  ],
+  "web3_hook_contest": {
+    "applies": false,
+    "contest_intake_path": "",
+    "hook_primitive_card_path": "",
+    "onchain_proof_pack_path": "",
+    "claim_reality_matrix_path": ".hunter/claim-reality-matrix.md",
+    "social_ops_checklist_path": "",
+    "accepted_chain": "Stellar",
+    "accepted_pool_manager": "",
+    "required_wallet_or_frontend": "Stellar wallet or demo signer path for user-owned results",
+    "counted_trading_route": "",
+    "excluded_trading_routes": [],
+    "mainnet_testnet_calibration": "Testnet is acceptable if disclosed and inspectable.",
+    "anti_sybil_rules": []
+  },
+  "killer_proof_phrase": "private proof, public Stellar consequence",
+  "max_public_built_with_tags": 10,
+  "judge_recall_requirement": "At least 2 of 3 cold judges can recall user + Stellar/ZK consequence + visible artifact after 10 seconds.",
+  "primary_sponsor_centrality_requirement": "Removing Stellar verification or transaction state must break the core outcome.",
+  "target_user_or_community": "people who need to prove eligibility, performance, payment, or private terms without revealing the underlying secret",
+  "winner_slot_sentence": "We are trying to win the Real-World ZK on Stellar track by proving a private user condition changes a public payout/access/receipt result on Stellar.",
+  "hard_disqualifiers": [
+    "ZK only appears in README",
+    "Stellar only appears as branding",
+    "hero path is a proof dashboard or static hash log",
+    "no public repo",
+    "no 2-3 minute demo video",
+    "wallet/sign/transaction path missing for user-owned Web3 result"
+  ],
+  "proof_paths_ranked": [
+    {
+      "type": "sponsor_native_or_live_data_proof",
+      "target": "Stellar tx/contract state from hero action",
+      "how_to_get_before_submission": "Use `.tools/stellar-cli/stellar.exe`, Stellar SDK, or Soroban tests/deploy script",
+      "status": "tooling ready; project-specific contract pending"
+    },
+    {
+      "type": "evaluation_or_benchmark",
+      "target": "proof generation + verification command and test output",
+      "how_to_get_before_submission": "Run local circuit/prover/verifier tests and capture output",
+      "status": "pending concept lock"
+    },
+    {
+      "type": "adoption_or_user_proof",
+      "target": "cold-judge replay or hallway smoke result",
+      "how_to_get_before_submission": "Use browser smoke, screenshots, and simple user script",
+      "status": "pending build"
+    }
+  ],
+  "kill_or_mutate_rules": [
+    "Kill if the first action is reading a proof report.",
+    "Kill if ZK does not gate a payout, access, booking, score, receipt, or claim.",
+    "Mutate if only domain operators care.",
+    "Mutate if the Stellar primitive can be removed with no visible user consequence."
+  ]
+}

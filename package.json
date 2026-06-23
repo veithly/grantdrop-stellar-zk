@@ -1,0 +1,37 @@
+{
+  "name": "grantdrop",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name grantdrop-stellar-zk --branch main --commit-dirty=true",
+    "preview": "vite preview",
+    "runtime:audit:stable": "node scripts/audit-runtime-stable.mjs",
+    "public:smoke": "node scripts/public-smoke.mjs",
+    "proof:build": "node scripts/build-proof-assets.mjs",
+    "proof:verify": "snarkjs groth16 verify public/proofs/verification_key.json build/proofs/public.json build/proofs/proof.json"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@radix-ui/react-slot": "^1.3.0",
+    "@stellar/freighter-api": "^6.0.1",
+    "@stellar/stellar-sdk": "^16.0.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "motion": "^12.40.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "snarkjs": "^0.7.6",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "circom": "^0.5.46",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16"
+  }
+}

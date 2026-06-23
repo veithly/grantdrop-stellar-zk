@@ -1,0 +1,14 @@
+{
+  "schema": "stellar-tx-verification.v1",
+  "generated_at": "2026-06-23T10:18:56.1755616Z",
+  "network": "testnet",
+  "horizon_url": "https://horizon-testnet.stellar.org/transactions/098a940b40a92f15657571d33456b6110a669503cbfd4d08d13f3d74f0b13c9a",
+  "stellar_expert_url": "https://stellar.expert/explorer/testnet/tx/098a940b40a92f15657571d33456b6110a669503cbfd4d08d13f3d74f0b13c9a",
+  "hash": "098a940b40a92f15657571d33456b6110a669503cbfd4d08d13f3d74f0b13c9a",
+  "ledger": 3239218,
+  "successful": true,
+  "created_at": "2026-06-23T10:18:06Z",
+  "source_account": "GDZFPWRLOFVRY2LOUVIDQU7UDUNTYYNURSNIU33UK3HGOCAN27DHJYYP",
+  "receipt_id": "gd_68dddc217d",
+  "runtime_report": ".hunter/accepted-claim.report.json"
+}

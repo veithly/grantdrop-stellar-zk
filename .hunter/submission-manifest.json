@@ -1,0 +1,57 @@
+{
+  "schema": "submission-manifest.v1",
+  "project_name": "GrantDrop",
+  "track": "Stellar Hacks: Real-World ZK",
+  "live_url": "https://grantdrop-stellar-zk.pages.dev",
+  "demo_url": "https://grantdrop-stellar-zk.pages.dev/campaigns/zk-builder-microgrant",
+  "repo_url": "https://github.com/veithly/grantdrop-stellar-zk",
+  "video_url": "https://github.com/veithly/grantdrop-stellar-zk/blob/main/pitch/recording/pitch-demo-combined-final.mp4",
+  "video_duration_s": 56.512,
+  "video": {
+    "url": "https://github.com/veithly/grantdrop-stellar-zk/blob/main/pitch/recording/pitch-demo-combined-final.mp4",
+    "local_path": "pitch/recording/pitch-demo-combined-final.mp4",
+    "duration_s": 56.512,
+    "tts": {
+      "provider": "mimo",
+      "model": "mimo-v2.5-tts",
+      "voice": "Chloe",
+      "fallback": false
+    },
+    "demo_recording": {
+      "source": "artifacts/playwright/demo_raw.webm",
+      "real_browser_recording": true
+    },
+    "sync": {
+      "audio_video_delta_s": 0.012,
+      "source": "pitch/polish-combined/qa/duration-check.json"
+    },
+    "encode": {
+      "container": "mp4",
+      "video": "H.264 1920x1080 30fps",
+      "audio": "AAC stereo 48kHz"
+    },
+    "qa": {
+      "contact_sheet": "pitch/polish-combined/qa/contact-sheet.jpg",
+      "ffprobe": "pitch/polish-combined/qa/ffprobe-final.json",
+      "blackdetect": "pitch/polish-combined/qa/blackdetect.log",
+      "silencedetect": "pitch/polish-combined/qa/silencedetect.log"
+    }
+  },
+  "submission": {
+    "file": "SUBMISSION.md",
+    "copy_board": "pitch/submission-copy-board.md",
+    "pack": ".hunter/submission-pack.md",
+    "red_team": "pitch/judge-red-team.md"
+  },
+  "evidence": {
+    "runtime_report": ".hunter/runtime-interaction.report.json",
+    "public_smoke_report": ".hunter/public-smoke.report.json",
+    "public_chain_verification": ".hunter/public-chain-verification.json",
+    "claim_matrix": ".hunter/claim-matrix.json",
+    "proof_command": "npm run proof:verify",
+    "desktop_screenshot": "docs/assets/grantdrop-desktop-accepted.png",
+    "mobile_screenshot": "docs/assets/grantdrop-mobile-accepted.png",
+    "second_context_screenshot": "docs/assets/grantdrop-second-context.png"
+  },
+  "submit_boundary": "Final DoraHacks submit click requires human confirmation."
+}

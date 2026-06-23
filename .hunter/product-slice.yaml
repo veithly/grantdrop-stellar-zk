@@ -1,0 +1,40 @@
+$schema: product-slice.v1
+rule: "One complete workflow is the unit of success."
+
+user: "Eligible grant claimant"
+job_to_be_done: "Claim one proof-gated grant without exposing the private eligibility fact"
+single_sentence_promise: "Claim a Stellar grant receipt without exposing why you qualify"
+single_sentence_output: "A reopenable GrantDrop receipt with accepted, rejected, or already-claimed state"
+
+primary_actor: "Claimant with Stellar wallet or client-side signer"
+secondary_actor_or_return_flow: "Public inspector reopens /receipts/[receiptId] without wallet"
+
+public_url: "pending G5 deploy plan: Cloudflare Pages public host via npm run build and wrangler pages deploy dist"
+demo_credentials: "No account credentials; claim path uses Freighter/client signer and read-only receipts need only URL"
+
+core_loop_steps:
+  - "User opens the fixed microgrant campaign and chooses valid, invalid, or repeated private input"
+  - "App generates/submits proof, checks nullifier, and submits Stellar transaction or contract-state claim"
+  - "UI shows accepted, rejected, or already-claimed receipt state"
+  - "Receipt reopens by URL and exposes proof/Stellar inspection path"
+
+real_output_type: "receipt with proof/public inputs, nullifier, wallet, status, and tx or contract reference"
+history_surface: "/receipts/[receiptId]"
+
+empty_states:
+  - "Campaign unavailable explains no claim can be marked paid and offers retry or receipt replay"
+loading_states:
+  - "Proof pending and transaction pending rows show work in progress before receipt"
+error_states:
+  - "Wallet rejected, proof unavailable, duplicate, tx failed, and degraded inspection show recoverable blocked states"
+
+sponsor_component: "Stellar testnet transaction or Soroban contract state on the critical claim path"
+sponsor_user_moment: "Claimant sees a paid/accepted receipt only after the Stellar reference exists"
+sponsor_state_change: "Without Stellar the accepted receipt cannot be public or chain-inspectable"
+
+proof_links:
+  - "pitch/gpt-pro/responses/spec/01-best-prd-response.md"
+  - "pitch/gpt-pro/responses/spec/02-best-uiux-response.md"
+  - "BUILD.md"
+  - "future README proof command and tx/contract reference"
+known_limits: "P0 uses one fixed testnet campaign and does not claim mainnet, custody, KYC, or audited privacy"
