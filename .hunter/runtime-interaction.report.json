@@ -2,7 +2,7 @@
   "schema": "runtime-interaction-report.v2",
   "base_url": "https://grantdrop-stellar-zk.pages.dev",
   "plan_path": "C:\\Users\\Ricky\\Documents\\Project\\Hackathon\\stellar-hacks-zk\\.hunter\\runtime-interaction.plan.json",
-  "generated_at": "2026-06-23T11:13:03.503Z",
+  "generated_at": "2026-06-23T11:27:51.260Z",
   "pass": true,
   "metrics": {
     "case_count": 2,
@@ -35,54 +35,54 @@
               "action": "goto",
               "path": "/campaigns/zk-builder-microgrant",
               "pass": true,
-              "elapsed_ms": 2045
+              "elapsed_ms": 2352
             },
             {
               "action": "assertVisible",
               "selector": "[data-hero-text]",
               "pass": true,
-              "elapsed_ms": 35
+              "elapsed_ms": 42
             },
             {
               "action": "assertText",
               "text": "Claim a Stellar grant receipt without exposing why you qualify.",
               "pass": true,
-              "elapsed_ms": 12
+              "elapsed_ms": 13
             },
             {
               "action": "click",
               "role": "button",
               "pass": true,
-              "elapsed_ms": 62
+              "elapsed_ms": 55
             },
             {
               "action": "click",
               "role": "button",
               "pass": true,
-              "elapsed_ms": 44
+              "elapsed_ms": 41
             },
             {
               "action": "assertText",
               "text": "Client-side Stellar testnet signer",
               "pass": true,
-              "elapsed_ms": 1344
+              "elapsed_ms": 835
             },
             {
               "action": "click",
               "selector": "[data-copy-diagnostic]",
               "pass": true,
-              "elapsed_ms": 47
+              "elapsed_ms": 55
             },
             {
               "action": "reload",
               "pass": true,
-              "elapsed_ms": 282
+              "elapsed_ms": 293
             },
             {
               "action": "assertVisible",
               "selector": "[data-cta-primary]",
               "pass": true,
-              "elapsed_ms": 25
+              "elapsed_ms": 20
             }
           ],
           "pass": true,
@@ -103,31 +103,31 @@
               "action": "goto",
               "path": "/receipts/not-yet-created",
               "pass": true,
-              "elapsed_ms": 1061
+              "elapsed_ms": 1030
             },
             {
               "action": "assertText",
               "text": "Receipt not found",
               "pass": true,
-              "elapsed_ms": 35
+              "elapsed_ms": 38
             },
             {
               "action": "assertText",
               "text": "Return to campaign",
               "pass": true,
-              "elapsed_ms": 8
+              "elapsed_ms": 7
             },
             {
               "action": "click",
               "text": "Return to campaign",
               "pass": true,
-              "elapsed_ms": 175
+              "elapsed_ms": 221
             },
             {
               "action": "assertText",
               "text": "Claim a Stellar grant receipt without exposing why you qualify.",
               "pass": true,
-              "elapsed_ms": 227
+              "elapsed_ms": 219
             }
           ],
           "pass": true,
@@ -158,13 +158,13 @@
               "action": "goto",
               "path": "/campaigns/zk-builder-microgrant",
               "pass": true,
-              "elapsed_ms": 1607
+              "elapsed_ms": 1628
             },
             {
               "action": "assertVisible",
               "selector": "[data-hero-text]",
               "pass": true,
-              "elapsed_ms": 39
+              "elapsed_ms": 49
             },
             {
               "action": "assertText",
@@ -176,36 +176,36 @@
               "action": "click",
               "role": "button",
               "pass": true,
-              "elapsed_ms": 69
+              "elapsed_ms": 68
             },
             {
               "action": "click",
               "role": "button",
               "pass": true,
-              "elapsed_ms": 47
+              "elapsed_ms": 50
             },
             {
               "action": "assertText",
               "text": "Client-side Stellar testnet signer",
               "pass": true,
-              "elapsed_ms": 450
+              "elapsed_ms": 833
             },
             {
               "action": "click",
               "selector": "[data-copy-diagnostic]",
               "pass": true,
-              "elapsed_ms": 65
+              "elapsed_ms": 53
             },
             {
               "action": "reload",
               "pass": true,
-              "elapsed_ms": 699
+              "elapsed_ms": 861
             },
             {
               "action": "assertVisible",
               "selector": "[data-cta-primary]",
               "pass": true,
-              "elapsed_ms": 46
+              "elapsed_ms": 51
             }
           ],
           "pass": true,
@@ -226,31 +226,31 @@
               "action": "goto",
               "path": "/receipts/not-yet-created",
               "pass": true,
-              "elapsed_ms": 1496
+              "elapsed_ms": 1100
             },
             {
               "action": "assertText",
               "text": "Receipt not found",
               "pass": true,
-              "elapsed_ms": 84
+              "elapsed_ms": 78
             },
             {
               "action": "assertText",
               "text": "Return to campaign",
               "pass": true,
-              "elapsed_ms": 13
+              "elapsed_ms": 10
             },
             {
               "action": "click",
               "text": "Return to campaign",
               "pass": true,
-              "elapsed_ms": 367
+              "elapsed_ms": 258
             },
             {
               "action": "assertText",
               "text": "Claim a Stellar grant receipt without exposing why you qualify.",
               "pass": true,
-              "elapsed_ms": 251
+              "elapsed_ms": 261
             }
           ],
           "pass": true,
@@ -281,54 +281,54 @@
               "action": "goto",
               "path": "/campaigns/zk-builder-microgrant",
               "pass": true,
-              "elapsed_ms": 7974
+              "elapsed_ms": 2845
             },
             {
               "action": "assertVisible",
               "selector": "[data-hero-text]",
               "pass": true,
-              "elapsed_ms": 503
+              "elapsed_ms": 360
             },
             {
               "action": "assertText",
               "text": "Claim a Stellar grant receipt without exposing why you qualify.",
               "pass": true,
-              "elapsed_ms": 57
+              "elapsed_ms": 32
             },
             {
               "action": "click",
               "role": "button",
               "pass": true,
-              "elapsed_ms": 637
+              "elapsed_ms": 609
             },
             {
               "action": "click",
               "role": "button",
               "pass": true,
-              "elapsed_ms": 514
+              "elapsed_ms": 587
             },
             {
               "action": "assertText",
               "text": "Client-side Stellar testnet signer",
               "pass": true,
-              "elapsed_ms": 2825
+              "elapsed_ms": 1671
             },
             {
               "action": "click",
               "selector": "[data-copy-diagnostic]",
               "pass": true,
-              "elapsed_ms": 268
+              "elapsed_ms": 264
             },
             {
               "action": "reload",
               "pass": true,
-              "elapsed_ms": 1092
+              "elapsed_ms": 1551
             },
             {
               "action": "assertVisible",
               "selector": "[data-cta-primary]",
               "pass": true,
-              "elapsed_ms": 351
+              "elapsed_ms": 86
             }
           ],
           "pass": true,
@@ -349,36 +349,36 @@
               "action": "goto",
               "path": "/receipts/not-yet-created",
               "pass": true,
-              "elapsed_ms": 2989
+              "elapsed_ms": 2642
             },
             {
               "action": "assertText",
               "text": "Receipt not found",
               "pass": true,
-              "elapsed_ms": 197
+              "elapsed_ms": 134
             },
             {
               "action": "assertText",
               "text": "Return to campaign",
               "pass": true,
-              "elapsed_ms": 57
+              "elapsed_ms": 17
             },
             {
               "action": "click",
               "text": "Return to campaign",
               "pass": true,
-              "elapsed_ms": 772
+              "elapsed_ms": 818
             },
             {
               "action": "assertText",
               "text": "Claim a Stellar grant receipt without exposing why you qualify.",
               "pass": true,
-              "elapsed_ms": 382
+              "elapsed_ms": 332
             }
           ],
           "pass": true,
           "runtime_scan": {
-            "textLength": 862,
+            "textLength": 875,
             "clickableCount": 6,
             "questionableControlCount": 0,
             "smells": []
@@ -404,54 +404,54 @@
               "action": "goto",
               "path": "/campaigns/zk-builder-microgrant",
               "pass": true,
-              "elapsed_ms": 1630
+              "elapsed_ms": 1411
             },
             {
               "action": "assertVisible",
               "selector": "[data-hero-text]",
               "pass": true,
-              "elapsed_ms": 32
+              "elapsed_ms": 29
             },
             {
               "action": "assertText",
               "text": "Claim a Stellar grant receipt without exposing why you qualify.",
               "pass": true,
-              "elapsed_ms": 9
+              "elapsed_ms": 10
             },
             {
               "action": "click",
               "role": "button",
               "pass": true,
-              "elapsed_ms": 59
+              "elapsed_ms": 58
             },
             {
               "action": "click",
               "role": "button",
               "pass": true,
-              "elapsed_ms": 43
+              "elapsed_ms": 40
             },
             {
               "action": "assertText",
               "text": "Client-side Stellar testnet signer",
               "pass": true,
-              "elapsed_ms": 876
+              "elapsed_ms": 372
             },
             {
               "action": "click",
               "selector": "[data-copy-diagnostic]",
               "pass": true,
-              "elapsed_ms": 56
+              "elapsed_ms": 39
             },
             {
               "action": "reload",
               "pass": true,
-              "elapsed_ms": 299
+              "elapsed_ms": 389
             },
             {
               "action": "assertVisible",
               "selector": "[data-cta-primary]",
               "pass": true,
-              "elapsed_ms": 18
+              "elapsed_ms": 24
             }
           ],
           "pass": true,
@@ -472,31 +472,31 @@
               "action": "goto",
               "path": "/receipts/not-yet-created",
               "pass": true,
-              "elapsed_ms": 1489
+              "elapsed_ms": 1262
             },
             {
               "action": "assertText",
               "text": "Receipt not found",
               "pass": true,
-              "elapsed_ms": 40
+              "elapsed_ms": 38
             },
             {
               "action": "assertText",
               "text": "Return to campaign",
               "pass": true,
-              "elapsed_ms": 9
+              "elapsed_ms": 11
             },
             {
               "action": "click",
               "text": "Return to campaign",
               "pass": true,
-              "elapsed_ms": 242
+              "elapsed_ms": 173
             },
             {
               "action": "assertText",
               "text": "Claim a Stellar grant receipt without exposing why you qualify.",
               "pass": true,
-              "elapsed_ms": 222
+              "elapsed_ms": 224
             }
           ],
           "pass": true,
@@ -522,54 +522,54 @@
           "action": "goto",
           "path": "/campaigns/zk-builder-microgrant",
           "pass": true,
-          "elapsed_ms": 2045
+          "elapsed_ms": 2352
         },
         {
           "action": "assertVisible",
           "selector": "[data-hero-text]",
           "pass": true,
-          "elapsed_ms": 35
+          "elapsed_ms": 42
         },
         {
           "action": "assertText",
           "text": "Claim a Stellar grant receipt without exposing why you qualify.",
           "pass": true,
-          "elapsed_ms": 12
+          "elapsed_ms": 13
         },
         {
           "action": "click",
           "role": "button",
           "pass": true,
-          "elapsed_ms": 62
+          "elapsed_ms": 55
         },
         {
           "action": "click",
           "role": "button",
           "pass": true,
-          "elapsed_ms": 44
+          "elapsed_ms": 41
         },
         {
           "action": "assertText",
           "text": "Client-side Stellar testnet signer",
           "pass": true,
-          "elapsed_ms": 1344
+          "elapsed_ms": 835
         },
         {
           "action": "click",
           "selector": "[data-copy-diagnostic]",
           "pass": true,
-          "elapsed_ms": 47
+          "elapsed_ms": 55
         },
         {
           "action": "reload",
           "pass": true,
-          "elapsed_ms": 282
+          "elapsed_ms": 293
         },
         {
           "action": "assertVisible",
           "selector": "[data-cta-primary]",
           "pass": true,
-          "elapsed_ms": 25
+          "elapsed_ms": 20
         }
       ],
       "pass": true,
@@ -592,31 +592,31 @@
           "action": "goto",
           "path": "/receipts/not-yet-created",
           "pass": true,
-          "elapsed_ms": 1061
+          "elapsed_ms": 1030
         },
         {
           "action": "assertText",
           "text": "Receipt not found",
           "pass": true,
-          "elapsed_ms": 35
+          "elapsed_ms": 38
         },
         {
           "action": "assertText",
           "text": "Return to campaign",
           "pass": true,
-          "elapsed_ms": 8
+          "elapsed_ms": 7
         },
         {
           "action": "click",
           "text": "Return to campaign",
           "pass": true,
-          "elapsed_ms": 175
+          "elapsed_ms": 221
         },
         {
           "action": "assertText",
           "text": "Claim a Stellar grant receipt without exposing why you qualify.",
           "pass": true,
-          "elapsed_ms": 227
+          "elapsed_ms": 219
         }
       ],
       "pass": true,
@@ -639,13 +639,13 @@
           "action": "goto",
           "path": "/campaigns/zk-builder-microgrant",
           "pass": true,
-          "elapsed_ms": 1607
+          "elapsed_ms": 1628
         },
         {
           "action": "assertVisible",
           "selector": "[data-hero-text]",
           "pass": true,
-          "elapsed_ms": 39
+          "elapsed_ms": 49
         },
         {
           "action": "assertText",
@@ -657,36 +657,36 @@
           "action": "click",
           "role": "button",
           "pass": true,
-          "elapsed_ms": 69
+          "elapsed_ms": 68
         },
         {
           "action": "click",
           "role": "button",
           "pass": true,
-          "elapsed_ms": 47
+          "elapsed_ms": 50
         },
         {
           "action": "assertText",
           "text": "Client-side Stellar testnet signer",
           "pass": true,
-          "elapsed_ms": 450
+          "elapsed_ms": 833
         },
         {
           "action": "click",
           "selector": "[data-copy-diagnostic]",
           "pass": true,
-          "elapsed_ms": 65
+          "elapsed_ms": 53
         },
         {
           "action": "reload",
           "pass": true,
-          "elapsed_ms": 699
+          "elapsed_ms": 861
         },
         {
           "action": "assertVisible",
           "selector": "[data-cta-primary]",
           "pass": true,
-          "elapsed_ms": 46
+          "elapsed_ms": 51
         }
       ],
       "pass": true,
@@ -709,31 +709,31 @@
           "action": "goto",
           "path": "/receipts/not-yet-created",
           "pass": true,
-          "elapsed_ms": 1496
+          "elapsed_ms": 1100
         },
         {
           "action": "assertText",
           "text": "Receipt not found",
           "pass": true,
-          "elapsed_ms": 84
+          "elapsed_ms": 78
         },
         {
           "action": "assertText",
           "text": "Return to campaign",
           "pass": true,
-          "elapsed_ms": 13
+          "elapsed_ms": 10
         },
         {
           "action": "click",
           "text": "Return to campaign",
           "pass": true,
-          "elapsed_ms": 367
+          "elapsed_ms": 258
         },
         {
           "action": "assertText",
           "text": "Claim a Stellar grant receipt without exposing why you qualify.",
           "pass": true,
-          "elapsed_ms": 251
+          "elapsed_ms": 261
         }
       ],
       "pass": true,
@@ -756,54 +756,54 @@
           "action": "goto",
           "path": "/campaigns/zk-builder-microgrant",
           "pass": true,
-          "elapsed_ms": 7974
+          "elapsed_ms": 2845
         },
         {
           "action": "assertVisible",
           "selector": "[data-hero-text]",
           "pass": true,
-          "elapsed_ms": 503
+          "elapsed_ms": 360
         },
         {
           "action": "assertText",
           "text": "Claim a Stellar grant receipt without exposing why you qualify.",
           "pass": true,
-          "elapsed_ms": 57
+          "elapsed_ms": 32
         },
         {
           "action": "click",
           "role": "button",
           "pass": true,
-          "elapsed_ms": 637
+          "elapsed_ms": 609
         },
         {
           "action": "click",
           "role": "button",
           "pass": true,
-          "elapsed_ms": 514
+          "elapsed_ms": 587
         },
         {
           "action": "assertText",
           "text": "Client-side Stellar testnet signer",
           "pass": true,
-          "elapsed_ms": 2825
+          "elapsed_ms": 1671
         },
         {
           "action": "click",
           "selector": "[data-copy-diagnostic]",
           "pass": true,
-          "elapsed_ms": 268
+          "elapsed_ms": 264
         },
         {
           "action": "reload",
           "pass": true,
-          "elapsed_ms": 1092
+          "elapsed_ms": 1551
         },
         {
           "action": "assertVisible",
           "selector": "[data-cta-primary]",
           "pass": true,
-          "elapsed_ms": 351
+          "elapsed_ms": 86
         }
       ],
       "pass": true,
@@ -826,36 +826,36 @@
           "action": "goto",
           "path": "/receipts/not-yet-created",
           "pass": true,
-          "elapsed_ms": 2989
+          "elapsed_ms": 2642
         },
         {
           "action": "assertText",
           "text": "Receipt not found",
           "pass": true,
-          "elapsed_ms": 197
+          "elapsed_ms": 134
         },
         {
           "action": "assertText",
           "text": "Return to campaign",
           "pass": true,
-          "elapsed_ms": 57
+          "elapsed_ms": 17
         },
         {
           "action": "click",
           "text": "Return to campaign",
           "pass": true,
-          "elapsed_ms": 772
+          "elapsed_ms": 818
         },
         {
           "action": "assertText",
           "text": "Claim a Stellar grant receipt without exposing why you qualify.",
           "pass": true,
-          "elapsed_ms": 382
+          "elapsed_ms": 332
         }
       ],
       "pass": true,
       "runtime_scan": {
-        "textLength": 862,
+        "textLength": 875,
         "clickableCount": 6,
         "questionableControlCount": 0,
         "smells": []
@@ -873,54 +873,54 @@
           "action": "goto",
           "path": "/campaigns/zk-builder-microgrant",
           "pass": true,
-          "elapsed_ms": 1630
+          "elapsed_ms": 1411
         },
         {
           "action": "assertVisible",
           "selector": "[data-hero-text]",
           "pass": true,
-          "elapsed_ms": 32
+          "elapsed_ms": 29
         },
         {
           "action": "assertText",
           "text": "Claim a Stellar grant receipt without exposing why you qualify.",
           "pass": true,
-          "elapsed_ms": 9
+          "elapsed_ms": 10
         },
         {
           "action": "click",
           "role": "button",
           "pass": true,
-          "elapsed_ms": 59
+          "elapsed_ms": 58
         },
         {
           "action": "click",
           "role": "button",
           "pass": true,
-          "elapsed_ms": 43
+          "elapsed_ms": 40
         },
         {
           "action": "assertText",
           "text": "Client-side Stellar testnet signer",
           "pass": true,
-          "elapsed_ms": 876
+          "elapsed_ms": 372
         },
         {
           "action": "click",
           "selector": "[data-copy-diagnostic]",
           "pass": true,
-          "elapsed_ms": 56
+          "elapsed_ms": 39
         },
         {
           "action": "reload",
           "pass": true,
-          "elapsed_ms": 299
+          "elapsed_ms": 389
         },
         {
           "action": "assertVisible",
           "selector": "[data-cta-primary]",
           "pass": true,
-          "elapsed_ms": 18
+          "elapsed_ms": 24
         }
       ],
       "pass": true,
@@ -943,31 +943,31 @@
           "action": "goto",
           "path": "/receipts/not-yet-created",
           "pass": true,
-          "elapsed_ms": 1489
+          "elapsed_ms": 1262
         },
         {
           "action": "assertText",
           "text": "Receipt not found",
           "pass": true,
-          "elapsed_ms": 40
+          "elapsed_ms": 38
         },
         {
           "action": "assertText",
           "text": "Return to campaign",
           "pass": true,
-          "elapsed_ms": 9
+          "elapsed_ms": 11
         },
         {
           "action": "click",
           "text": "Return to campaign",
           "pass": true,
-          "elapsed_ms": 242
+          "elapsed_ms": 173
         },
         {
           "action": "assertText",
           "text": "Claim a Stellar grant receipt without exposing why you qualify.",
           "pass": true,
-          "elapsed_ms": 222
+          "elapsed_ms": 224
         }
       ],
       "pass": true,

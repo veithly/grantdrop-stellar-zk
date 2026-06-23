@@ -7,5 +7,5 @@
   "second_context_or_role_proof": "The runtime report includes a second context public receipt viewer case for /receipts/not-yet-created and a Return to campaign recovery path.",
   "support_contact_or_failure_state": "Failure states cover proof rejection, already-claimed receipts, tx failed receipts, missing receipt recovery, and retry through the campaign route.",
   "runtime_interaction_report": ".hunter/runtime-interaction.report.json",
-  "last_verified_at": "2026-06-23T11:13:03.503Z"
+  "last_verified_at": "2026-06-23T11:27:51.260Z"
 }
