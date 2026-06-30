@@ -78,7 +78,7 @@ https://github.com/veithly/grantdrop-stellar-zk
 
 ## Video URL
 
-Pending: a 120–180s combined pitch/demo is being re-rendered to the `artifacts/narration.json` structure (invalid rejected → valid claim → on-chain `verify_claim` → inspect → Stellar Expert → second-context reopen → trust boundary). The link will be published here once the render passes the duration and QA checks.
+Rendered: a 147.7s combined pitch + live on-chain demo (1080p30, H.264 ~3.0 Mbps / AAC, mimo `Chloe` narration) at `pitch/recording/pitch-demo-onchain-150s.mp4`. Beats: cold open → privacy pressure → invalid rejected → valid claim → on-chain `verify_claim` accepted → inspect proof → shareable receipt → Stellar Expert verify tx → recovery → trust boundary → ask. It is a real browser recording of the live claim; duration sits inside the 120–180s gate with no black frames and scene-accurate A/V sync. The public link will be published here once the file is uploaded to the submission video host.
 
 ## Smart contract addresses
 

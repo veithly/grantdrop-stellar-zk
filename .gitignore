@@ -42,3 +42,10 @@ pitch/prize_verdict.md
 pitch/prize_thesis.md
 pitch/judge-red-team.md
 pitch/public-copy-scorecard.md
+
+# Demo recording media + one-off recorder config (kept local; video is hosted externally, not in-repo)
+pitch/recording/*.mp4
+pitch/recording/*.webm
+pitch/recording/*.wav
+docs/assets/grantdrop-video-contact-sheet.png
+video.config.json
