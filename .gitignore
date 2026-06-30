@@ -35,3 +35,10 @@ docs/assets/_debug-failure.png
 
 # hackathonhunter internal flow state (not part of the public submission)
 .hunter/
+
+# Internal self-review / strategy docs (not part of the public submission)
+pitch/gpt-pro/
+pitch/prize_verdict.md
+pitch/prize_thesis.md
+pitch/judge-red-team.md
+pitch/public-copy-scorecard.md

@@ -22,8 +22,8 @@ GrantDrop gives a grant program a public receipt without putting the private eli
 
 ## How it works
 
-- ZK gate: `src/services/proof.ts` builds the witness input, runs `snarkjs.groth16.fullProve`, verifies with `public/proofs/verification_key.json`, and keeps the private secret off the receipt.
-- On-chain verification: `src/services/contract.ts` submits the proof to a deployed Soroban Groth16 verifier contract that runs the native BN254 pairing check (Stellar Protocol 25 host functions, CAP-0074) and enforces eligibility by checking the public `secretSquare` commitment. Contract: `CA7KNPNRCI7I4RRWRJ4H5BJP4SLKPUEWJYSLYH4HWJTOVEDR7FEFU2X2`.
+- ZK proof generation: `src/services/proof.ts` builds the witness input, runs `snarkjs.groth16.fullProve`, and fast-fails ineligible input in the browser for UX. The private secret never leaves the browser and is never stored on the receipt.
+- On-chain verification (gates the claim): `src/services/contract.ts` encodes the proof and verification key and submits a signed `verify_claim` invocation to a deployed Soroban Groth16 verifier that runs the native BN254 pairing check (Stellar Protocol 25 host functions, CAP-0074) and checks the public `secretSquare` eligibility commitment. The receipt is marked `ACCEPTED` only if this on-chain call returns true, so a browser-only result cannot accept a claim. Contract: `CA7KNPNRCI7I4RRWRJ4H5BJP4SLKPUEWJYSLYH4HWJTOVEDR7FEFU2X2`.
 - Stellar path: `src/services/stellar.ts` creates a client-side testnet signer, funds it through Friendbot, signs a `manageData` transaction, and returns a Stellar Expert URL.
 - Receipt state: `src/services/receiptStore.ts` stores receipts in IndexedDB for return visits and encodes public receipt fields into the shared URL.
 - One-claim guard: accepted receipts are indexed by nullifier, so the same nullifier returns an already-claimed receipt.
@@ -32,19 +32,10 @@ GrantDrop gives a grant program a public receipt without putting the private eli
 
 - Soroban verifier contract: `contracts/grantdrop_verifier/` — `cargo test` passes 4/4 (valid claim accepted; tampered proof / wrong secret / wrong wallet rejected). Deployed to testnet: `CA7KNPNRCI7I4RRWRJ4H5BJP4SLKPUEWJYSLYH4HWJTOVEDR7FEFU2X2`.
 - Deploy tx: `e8c33a455a41390dce6d26ac8501de145937d9f7b2a1deb989ff931dd7550062` (Stellar Expert).
+- On-chain `verify_claim` invocations returning true: `239d90aa0928d1b941dbfa8548753304d0da7ca2ecd7901854f7fbbaa2a8b31f` (reference), `7dbb8943e4ee101a25a355b28d8ee0e6ac048b022fb2b26a1270c9a87dc85d1f` (live in-browser claim). See `docs/evidence/onchain-verification.json`.
 - Circuit: `circuits/grantdrop.circom` — non-degenerate Groth16; public signals `[nullifier, secretSquare, campaignId, walletBinding]` are bound by quadratic constraints so tampered signals fail verification.
-- Public smoke report: `.hunter/public-smoke.report.json`
-- Desktop success screenshot: `docs/assets/grantdrop-desktop-accepted.png`
-- Mobile success screenshot: `docs/assets/grantdrop-mobile-accepted.png`
-- Second-context reopen screenshot: `docs/assets/grantdrop-second-context.png`
-- Public chain checks: `.hunter/public-chain-verification.json`
-- Verified claims: `.hunter/claim-matrix.json`
+- Screenshots (`docs/assets/`): `grantdrop-desktop-accepted.png` (accepted + on-chain verify tx), `grantdrop-mobile-accepted.png`, `grantdrop-second-context.png` (signerless reopen), `grantdrop-invalid-rejected.png`, `grantdrop-reuse-blocked.png`, `grantdrop-receipt-not-found.png`, `grantdrop-contract-on-stellar-expert.png`.
 - Proof command: `npm run proof:verify`
-
-Latest public smoke txs:
-
-- Desktop: `8f1c02844548ac0c93ef30037d91aa9cee78e6c5c51e25d3cb5bb20656078cba`
-- Mobile: `0c41c4eafa4ec8f110ac32fd3783ac4252e3bc1378b7a246759234c0d2703960`
 
 ## Run locally
 

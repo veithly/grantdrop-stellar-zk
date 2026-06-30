@@ -15,16 +15,27 @@
 
 | Requirement | Evidence | Result |
 | --- | --- | --- |
-| Pitch/deck first, real browser demo second | final MP4 chapters and contact sheet | locked |
-| Required TTS provider is used with no fallback | `TTS_PROVIDER=mimo`, `mimo-v2.5-tts`, voice `Chloe`, measured scene durations | locked |
-| Stale TTS chunks were regenerated | speech chunks recreated after copy and provider lock | locked |
-| Demo is a real browser/app recording | real browser/app recording plus recorder log | locked |
-| No screenshot slideshow is allowed | screenshot slideshow is invalid for the demo segment | locked |
-| Recorder fails on broken actions | `allow_action_failures=false`, `allow_empty_scenes=false` in the recorder config | locked |
-| Timing uses measured narration durations | scene waits align with measured durations | locked |
-| Audio/video sync is within 0.5s | ffprobe report and duration check | locked |
-| UI is readable in final encode | H.264/AAC, 1080p, 30fps, video bitrate >= 2.5 Mbps, contact sheet checked | locked |
-| No blank/silence segment over 2s | blank-frame and silence logs | locked |
+| Pitch/deck first, real browser demo second | final MP4 chapters and contact sheet | R1-open: re-render needed at target duration |
+| Required TTS provider is used with no fallback | `TTS_PROVIDER=mimo`, `mimo-v2.5-tts`, voice `Chloe`, measured scene durations | R1-open: re-render needed at target duration |
+| Stale TTS chunks were regenerated | speech chunks recreated after copy and provider lock | R1-open: re-render needed at target duration |
+| Demo is a real browser/app recording | real browser/app recording plus recorder log | R1-open: re-render needed at target duration |
+| No screenshot slideshow is allowed | screenshot slideshow is invalid for the demo segment | R1-open: re-render needed at target duration |
+| Recorder fails on broken actions | `allow_action_failures=false`, `allow_empty_scenes=false` in the recorder config | R1-open: re-render needed at target duration |
+| Timing uses measured narration durations | scene waits align with measured durations | R1-open: re-render needed at target duration |
+| Audio/video sync is within 0.5s | ffprobe report and duration check | R1-open: re-render needed at target duration |
+| UI is readable in final encode | H.264/AAC, 1080p, 30fps, video bitrate >= 2.5 Mbps, contact sheet checked | R1-open: re-render needed at target duration |
+| No blank/silence segment over 2s | blank-frame and silence logs | R1-open: re-render needed at target duration |
+| Final duration is 120–180 seconds | ffprobe duration report | open: must render to the ~152s narration structure |
+| No payment/disbursement overclaim | caption QA grep | open: any caption implying payout, disbursement, mainnet, custody, KYC, or audited fails QA. On-chain proof verification IS allowed — the Soroban verifier is deployed and gates the claim. |
+
+## QA Frames To Add
+
+- invalid input rejected before any receipt
+- reuse-blocked (nullifier / already-claimed after first accepted claim)
+- on-chain verify_claim transaction succeeding (Soroban verifier returns true)
+- Stellar Expert transaction open
+- missing receipt recovery
+- trust boundary: Soroban verifies the proof on-chain / browser generates the proof / Stellar anchors the receipt
 
 ## First 30 Seconds Gate
 

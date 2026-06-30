@@ -13,12 +13,9 @@ GrantDrop deploys as a static Cloudflare Pages site.
 
 No Cloudflare storage binding is required for this submitted build. The app uses static proof assets, browser IndexedDB, public receipt URL payloads, and Stellar testnet Horizon/Friendbot from the client. There are no D1, KV, R2, Queue, service, or secret bindings to configure.
 
-## Smoke evidence
+## Evidence
 
-- Public runtime report: `.hunter/public-runtime.report.json`
-- Public smoke report: `.hunter/public-smoke.report.json`
-- Desktop success screenshot: `.hunter/public-smoke/desktop-accepted.png`
-- Mobile success screenshot: `.hunter/public-smoke/mobile-pixel7-accepted.png`
-- Second-context receipt screenshot: `.hunter/public-smoke/second-context-reopen.png`
+- On-chain verification: `docs/evidence/onchain-verification.json` (deployed Soroban verifier + `verify_claim` transactions).
+- Screenshots: `docs/assets/grantdrop-desktop-accepted.png`, `grantdrop-mobile-accepted.png`, `grantdrop-second-context.png`, `grantdrop-invalid-rejected.png`, `grantdrop-reuse-blocked.png`, `grantdrop-receipt-not-found.png`, `grantdrop-contract-on-stellar-expert.png`.
 
-The latest public smoke run opened the production URL, created accepted desktop and mobile receipts, and reopened the desktop receipt from a second browser context.
+A live claim opens the production URL, generates a Groth16 proof, has the Soroban contract verify it on-chain, anchors a `manageData` receipt, and reopens the receipt from a second browser context.
