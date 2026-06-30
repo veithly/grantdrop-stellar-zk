@@ -23,12 +23,16 @@ GrantDrop gives a grant program a public receipt without putting the private eli
 ## How it works
 
 - ZK gate: `src/services/proof.ts` builds the witness input, runs `snarkjs.groth16.fullProve`, verifies with `public/proofs/verification_key.json`, and keeps the private secret off the receipt.
+- On-chain verification: `src/services/contract.ts` submits the proof to a deployed Soroban Groth16 verifier contract that runs the native BN254 pairing check (Stellar Protocol 25 host functions, CAP-0074) and enforces eligibility by checking the public `secretSquare` commitment. Contract: `CA7KNPNRCI7I4RRWRJ4H5BJP4SLKPUEWJYSLYH4HWJTOVEDR7FEFU2X2`.
 - Stellar path: `src/services/stellar.ts` creates a client-side testnet signer, funds it through Friendbot, signs a `manageData` transaction, and returns a Stellar Expert URL.
 - Receipt state: `src/services/receiptStore.ts` stores receipts in IndexedDB for return visits and encodes public receipt fields into the shared URL.
 - One-claim guard: accepted receipts are indexed by nullifier, so the same nullifier returns an already-claimed receipt.
 
 ## Evidence
 
+- Soroban verifier contract: `contracts/grantdrop_verifier/` — `cargo test` passes 4/4 (valid claim accepted; tampered proof / wrong secret / wrong wallet rejected). Deployed to testnet: `CA7KNPNRCI7I4RRWRJ4H5BJP4SLKPUEWJYSLYH4HWJTOVEDR7FEFU2X2`.
+- Deploy tx: `e8c33a455a41390dce6d26ac8501de145937d9f7b2a1deb989ff931dd7550062` (Stellar Expert).
+- Circuit: `circuits/grantdrop.circom` — non-degenerate Groth16; public signals `[nullifier, secretSquare, campaignId, walletBinding]` are bound by quadratic constraints so tampered signals fail verification.
 - Public smoke report: `.hunter/public-smoke.report.json`
 - Desktop success screenshot: `docs/assets/grantdrop-desktop-accepted.png`
 - Mobile success screenshot: `docs/assets/grantdrop-mobile-accepted.png`

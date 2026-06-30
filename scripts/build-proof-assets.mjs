@@ -22,16 +22,20 @@ await rm(publicDir, { recursive: true, force: true });
 await mkdir(buildDir, { recursive: true });
 await mkdir(publicDir, { recursive: true });
 
-run("npx", [
-  "circom",
+run(`${process.env.HOME}/.local/bin/circom`, [
   "circuits/grantdrop.circom",
-  "-r",
-  "build/proofs/grantdrop.r1cs",
-  "-w",
-  "public/proofs/grantdrop.wasm",
-  "-s",
-  "build/proofs/grantdrop.sym",
+  "--r1cs",
+  "--wasm",
+  "--sym",
+  "--O0",
+  "-o",
+  "build/proofs",
+  "-l",
+  "node_modules",
 ]);
+// circom 2.x writes grantdrop_js/ + grantdrop.wasm into the output dir; normalize
+// the wasm path so the app and prover keep loading public/proofs/grantdrop.wasm.
+await copyFile("build/proofs/grantdrop_js/grantdrop.wasm", "public/proofs/grantdrop.wasm");
 
 run("npx", ["snarkjs", "powersoftau", "new", "bn128", "12", "build/proofs/pot12_0000.ptau"]);
 run("npx", [
@@ -50,7 +54,25 @@ run("npx", [
   "build/proofs/pot12_final.ptau",
   "build/proofs/grantdrop_0000.zkey",
 ]);
-await copyFile("build/proofs/grantdrop_0000.zkey", "public/proofs/grantdrop_final.zkey");
+run("npx", [
+  "snarkjs",
+  "zkey",
+  "contribute",
+  "build/proofs/grantdrop_0000.zkey",
+  "build/proofs/grantdrop_final.zkey",
+  "--name=GrantDrop automated contribution",
+  "-v",
+  "-e=grantdrop-stellar-zk-2026-06-30-local-ceremony",
+]);
+run("npx", [
+  "snarkjs",
+  "zkey",
+  "verify",
+  "build/proofs/grantdrop.r1cs",
+  "build/proofs/pot12_final.ptau",
+  "build/proofs/grantdrop_final.zkey",
+]);
+await copyFile("build/proofs/grantdrop_final.zkey", "public/proofs/grantdrop_final.zkey");
 run("npx", [
   "snarkjs",
   "zkey",

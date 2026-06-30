@@ -21,3 +21,10 @@ pitch/polish-combined/qa/
 build/proofs/*.ptau
 build/proofs/*.r1cs
 build/proofs/*.sym
+
+# Rust/Soroban contract build artifacts (2.6GB; regenerate with cargo build)
+contracts/**/target/
+
+# Derived on-chain calldata + local scratch
+build/calldata/
+sampleprove.mjs

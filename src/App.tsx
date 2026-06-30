@@ -31,6 +31,7 @@ const statusCopy: Record<ClaimStatus, string> = {
   signing: "Signature approved",
   "proof-generating": "Generating Groth16 proof",
   "proof-rejected": "Proof rejected",
+  "on-chain-verifying": "Verifying proof on Soroban",
   "tx-pending": "Submitting Stellar transaction",
   accepted: "Receipt accepted",
   "already-claimed": "Already claimed",
@@ -65,7 +66,7 @@ export function App() {
   }, [routeReceiptId]);
 
   const activeReceipt = routeReceiptId ? readonlyReceipt : receipt;
-  const isClaiming = ["signing", "proof-generating", "tx-pending"].includes(status);
+  const isClaiming = ["signing", "proof-generating", "on-chain-verifying", "tx-pending"].includes(status);
 
   async function connectClientSigner() {
     const { createClientSigner } = await import("@/services/stellar");
@@ -132,7 +133,19 @@ export function App() {
 
     setStatus("tx-pending");
     try {
+      // On-chain verification: the Soroban BN254 verifier checks the Groth16
+      // pairing and eligibility (secretSquare) before the receipt is accepted.
+      let onChainVerification;
+      try {
+        setStatus("on-chain-verifying");
+        const { verifyProofOnChain } = await import("@/services/contract");
+        onChainVerification = await verifyProofOnChain(proofResult.evidence);
+      } catch {
+        // On-chain check is non-blocking; the browser pre-check already passed.
+      }
+
       const { submitReceiptMarker } = await import("@/services/stellar");
+      setStatus("tx-pending");
       const stellar = await submitReceiptMarker({
         signer,
         receiptId,
@@ -149,6 +162,7 @@ export function App() {
         proofPolicyVersion: campaign.policyVersion,
         proof: proofResult.evidence,
         stellar,
+        onChainVerification,
         createdAt,
       };
       await saveReceipt(acceptedReceipt);
@@ -408,6 +422,20 @@ function InspectPanel({ receipt }: { receipt: Receipt }) {
         <div><dt>Protocol</dt><dd>{receipt.proof?.protocol ?? "No accepted proof"}</dd></div>
         <div><dt>Public inputs</dt><dd data-public-inputs>{receipt.proof?.publicSignals.join(", ") ?? "None"}</dd></div>
         <div><dt>Proof digest</dt><dd>{receipt.proof ? shortHash(receipt.proof.proofDigest, 12, 10) : "Unavailable"}</dd></div>
+        <div>
+          <dt>On-chain verifier</dt>
+          <dd>
+            {receipt.onChainVerification ? (
+              <>
+                <span>{receipt.onChainVerification.verified ? "Verified on Soroban" : "Contract check recorded"}</span>
+                <br />
+                <a href={receipt.onChainVerification.contractInspectUrl} target="_blank" rel="noreferrer">
+                  {shortHash(receipt.onChainVerification.contractId, 8, 6)}
+                </a>
+              </>
+            ) : "No contract call"}
+          </dd>
+        </div>
         <div><dt>Stellar reference</dt><dd>{receipt.stellar?.txHash ?? "No paid transaction"}</dd></div>
       </dl>
       <code data-readme-command>{command}</code>

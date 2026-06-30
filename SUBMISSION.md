@@ -26,7 +26,7 @@ GrantDrop runs one proof-gated microgrant campaign. A claimant opens `/campaigns
 
 ## How we built it
 
-The claim path uses three running parts. `src/services/proof.ts` builds the witness input and verifies the Groth16 proof against `public/proofs/verification_key.json`. `src/services/stellar.ts` creates a client-side Stellar testnet signer, funds the wallet through Friendbot, signs a Stellar `manageData` transaction, and returns the Stellar Expert link shown on the receipt. `src/services/receiptStore.ts` handles receipt storage and encodes the public receipt payload into the `/receipts/gd_c5c586b94b?r=...` route for read-only replay.
+The claim path uses four running parts. `src/services/proof.ts` builds the witness input and verifies the Groth16 proof against `public/proofs/verification_key.json` in the browser (fast-fail guardrail). `src/services/contract.ts` submits the proof to a deployed Soroban Groth16 verifier contract (`contracts/grantdrop_verifier/`) that runs the native BN254 pairing check (Stellar Protocol 25 host functions, CAP-0074) and enforces eligibility by checking the public `secretSquare` commitment — the proof's validity is decided on-chain, not only in the browser. `src/services/stellar.ts` creates a client-side Stellar testnet signer, funds the wallet through Friendbot, signs a Stellar `manageData` transaction, and returns the Stellar Expert link shown on the receipt. `src/services/receiptStore.ts` handles receipt storage and encodes the public receipt payload into the `/receipts/gd_c5c586b94b?r=...` route for read-only replay.
 
 ## Why it fits Stellar Hacks ZK
 
@@ -58,7 +58,7 @@ Add a real credential source and durable campaign storage so communities can run
 
 ## Built with
 
-Stellar, Stellar testnet, Groth16, snarkjs, Circom, Vite, React, TypeScript, Cloudflare Pages, IndexedDB
+Stellar, Stellar testnet, Soroban, Soroban BN254 host functions (CAP-0074), Groth16, snarkjs, Circom, Rust, Vite, React, TypeScript, Cloudflare Pages, IndexedDB
 
 ## Track / Category
 
@@ -82,7 +82,7 @@ https://github.com/veithly/grantdrop-stellar-zk/blob/main/pitch/recording/pitch-
 
 ## Smart contract addresses
 
-No smart contract address. GrantDrop uses Stellar testnet `manageData` transactions for the submitted proof receipt marker.
+Soroban Groth16 verifier: `CA7KNPNRCI7I4RRWRJ4H5BJP4SLKPUEWJYSLYH4HWJTOVEDR7FEFU2X2` (Stellar testnet). The contract runs the native BN254 pairing check (Protocol 25 host functions, CAP-0074) and enforces eligibility via the public `secretSquare` commitment. Source: `contracts/grantdrop_verifier/` (`cargo test` passes 4/4). GrantDrop also uses Stellar testnet `manageData` transactions for the public receipt marker.
 
 ## Known limits
 
