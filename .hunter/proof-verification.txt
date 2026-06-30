@@ -1,8 +1,0 @@
-Command:
-npm run proof:verify
-
-Result:
-snarkJS: OK!
-
-Checked:
-2026-06-23T10:08:00Z

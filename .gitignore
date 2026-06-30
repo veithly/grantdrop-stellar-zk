@@ -28,3 +28,10 @@ contracts/**/target/
 # Derived on-chain calldata + local scratch
 build/calldata/
 sampleprove.mjs
+scripts/probe-onchain.mjs
+scripts/capture-shots.mjs
+scripts/test-onchain-verify.mjs
+docs/assets/_debug-failure.png
+
+# hackathonhunter internal flow state (not part of the public submission)
+.hunter/

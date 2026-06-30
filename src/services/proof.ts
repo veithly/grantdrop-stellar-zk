@@ -59,6 +59,18 @@ export async function generateEligibilityProof(mode: ClaimMode, walletAddress: s
       };
     }
 
+    // Eligibility fast-fail for UX. The authoritative eligibility check runs
+    // on-chain in the Soroban verifier (secretSquare == expected); this browser
+    // pre-check rejects ineligible input before any signed transaction.
+    // publicSignals[1] is secretSquare (see circuit public signal order).
+    if (publicSignals[1] !== expectedSecretSquare) {
+      return {
+        ok: false,
+        nullifier: publicSignals[0],
+        reason: "Ineligible private input: it does not satisfy the campaign policy, so the Soroban verifier would reject it.",
+      };
+    }
+
     // publicSignals order (from circuits/grantdrop.circom):
     // [nullifier, secretSquare, campaignId, walletBinding]
     return {

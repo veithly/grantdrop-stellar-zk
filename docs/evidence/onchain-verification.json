@@ -1,0 +1,42 @@
+{
+  "schema": "onchain-verification.v1",
+  "summary": "GrantDrop verifies its Groth16 eligibility proof on-chain in a deployed Soroban contract using the native BN254 pairing host functions (Stellar Protocol 25, CAP-0074). The accepted claim is gated on a real, signed testnet verify_claim invocation.",
+  "network": "Stellar testnet",
+  "contract": {
+    "id": "CA7KNPNRCI7I4RRWRJ4H5BJP4SLKPUEWJYSLYH4HWJTOVEDR7FEFU2X2",
+    "source": "contracts/grantdrop_verifier/",
+    "expert_url": "https://stellar.expert/explorer/testnet/contract/CA7KNPNRCI7I4RRWRJ4H5BJP4SLKPUEWJYSLYH4HWJTOVEDR7FEFU2X2",
+    "deploy_tx": "e8c33a455a41390dce6d26ac8501de145937d9f7b2a1deb989ff931dd7550062"
+  },
+  "verify_claim_invocations": [
+    {
+      "label": "Reference signed invocation (deployer)",
+      "tx": "239d90aa0928d1b941dbfa8548753304d0da7ca2ecd7901854f7fbbaa2a8b31f",
+      "result": true,
+      "expert_url": "https://stellar.expert/explorer/testnet/tx/239d90aa0928d1b941dbfa8548753304d0da7ca2ecd7901854f7fbbaa2a8b31f"
+    },
+    {
+      "label": "Live in-browser claim (client testnet signer)",
+      "tx": "7dbb8943e4ee101a25a355b28d8ee0e6ac048b022fb2b26a1270c9a87dc85d1f",
+      "result": true,
+      "expert_url": "https://stellar.expert/explorer/testnet/tx/7dbb8943e4ee101a25a355b28d8ee0e6ac048b022fb2b26a1270c9a87dc85d1f"
+    }
+  ],
+  "contract_tests": {
+    "command": "cd contracts/grantdrop_verifier && cargo test",
+    "result": "4 passed; 0 failed",
+    "cases": [
+      "valid_claim_passes_on_chain",
+      "tampered_proof_is_rejected",
+      "wrong_secret_square_is_ineligible",
+      "tampered_wallet_binding_is_rejected"
+    ]
+  },
+  "public_signals_order": ["nullifier", "secretSquare", "campaignId", "walletBinding"],
+  "eligibility_rule": "secretSquare == 410492763305641 (= 20260621^2), enforced on-chain by verify_claim",
+  "trust_boundary": {
+    "on_chain": "Soroban verify_claim runs the BN254 Groth16 pairing check and the secretSquare eligibility check; the accepted receipt requires this signed invocation to return true.",
+    "browser": "Generates the Groth16 proof (snarkjs) and fast-fails ineligible input for UX before any transaction.",
+    "stellar": "A signed manageData transaction anchors the public receipt marker."
+  }
+}

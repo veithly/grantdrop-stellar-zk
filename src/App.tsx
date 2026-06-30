@@ -131,17 +131,34 @@ export function App() {
       return;
     }
 
-    setStatus("tx-pending");
     try {
-      // On-chain verification: the Soroban BN254 verifier checks the Groth16
-      // pairing and eligibility (secretSquare) before the receipt is accepted.
-      let onChainVerification;
-      try {
-        setStatus("on-chain-verifying");
-        const { verifyProofOnChain } = await import("@/services/contract");
-        onChainVerification = await verifyProofOnChain(proofResult.evidence);
-      } catch {
-        // On-chain check is non-blocking; the browser pre-check already passed.
+      // On-chain verification GATES the claim: the Soroban BN254 verifier runs
+      // the Groth16 pairing + eligibility (secretSquare) check in a real signed
+      // testnet transaction. The receipt is only accepted if the contract
+      // confirms the proof, so a browser-only bypass cannot mark a claim accepted.
+      setStatus("on-chain-verifying");
+      const { verifyProofOnChain } = await import("@/services/contract");
+      const onChainVerification = await verifyProofOnChain(proofResult.evidence, signer);
+
+      if (!onChainVerification.verified) {
+        const unverifiedReceipt: Receipt = {
+          id: receiptId,
+          campaignId: campaign.id,
+          campaignTitle: campaign.title,
+          walletAddress: signer.publicKey,
+          status: "failed",
+          mode: selectedMode,
+          nullifier: proofResult.nullifier,
+          proofPolicyVersion: campaign.policyVersion,
+          proof: proofResult.evidence,
+          onChainVerification,
+          rejectionReason: "The Soroban verifier did not confirm the proof on-chain, so no receipt was stamped.",
+          createdAt,
+        };
+        await saveReceipt(unverifiedReceipt);
+        setReceipt(unverifiedReceipt);
+        setStatus("failed");
+        return;
       }
 
       const { submitReceiptMarker } = await import("@/services/stellar");
@@ -427,11 +444,26 @@ function InspectPanel({ receipt }: { receipt: Receipt }) {
           <dd>
             {receipt.onChainVerification ? (
               <>
-                <span>{receipt.onChainVerification.verified ? "Verified on Soroban" : "Contract check recorded"}</span>
+                <span data-onchain-verified={receipt.onChainVerification.verified ? "true" : "false"}>
+                  {receipt.onChainVerification.verified ? "Proof verified on Soroban" : "Contract check recorded"}
+                </span>
                 <br />
                 <a href={receipt.onChainVerification.contractInspectUrl} target="_blank" rel="noreferrer">
-                  {shortHash(receipt.onChainVerification.contractId, 8, 6)}
+                  contract {shortHash(receipt.onChainVerification.contractId, 8, 6)}
                 </a>
+                {receipt.onChainVerification.invocationTxHash && (
+                  <>
+                    <br />
+                    <a
+                      href={`https://stellar.expert/explorer/testnet/tx/${receipt.onChainVerification.invocationTxHash}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      data-onchain-tx
+                    >
+                      verify tx {shortHash(receipt.onChainVerification.invocationTxHash, 8, 6)}
+                    </a>
+                  </>
+                )}
               </>
             ) : "No contract call"}
           </dd>

@@ -26,7 +26,7 @@ export function createClientSigner(): ClientSigner {
   };
 }
 
-async function ensureFunded(publicKey: string) {
+export async function ensureFunded(publicKey: string) {
   const server = new Horizon.Server(horizonUrl);
   try {
     await server.loadAccount(publicKey);
