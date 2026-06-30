@@ -16,10 +16,10 @@
       "expert_url": "https://stellar.expert/explorer/testnet/tx/239d90aa0928d1b941dbfa8548753304d0da7ca2ecd7901854f7fbbaa2a8b31f"
     },
     {
-      "label": "Live in-browser claim (client testnet signer)",
-      "tx": "7dbb8943e4ee101a25a355b28d8ee0e6ac048b022fb2b26a1270c9a87dc85d1f",
+      "label": "Live in-browser claim on the production site (https://grantdrop-stellar-zk.pages.dev, client testnet signer)",
+      "tx": "969ebb3b539dcc105b4f831f152fa11196d70816a77c4ddbbb5daf14ea2b503b",
       "result": true,
-      "expert_url": "https://stellar.expert/explorer/testnet/tx/7dbb8943e4ee101a25a355b28d8ee0e6ac048b022fb2b26a1270c9a87dc85d1f"
+      "expert_url": "https://stellar.expert/explorer/testnet/tx/969ebb3b539dcc105b4f831f152fa11196d70816a77c4ddbbb5daf14ea2b503b"
     }
   ],
   "contract_tests": {

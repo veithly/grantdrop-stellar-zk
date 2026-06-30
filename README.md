@@ -32,7 +32,7 @@ GrantDrop gives a grant program a public receipt without putting the private eli
 
 - Soroban verifier contract: `contracts/grantdrop_verifier/` — `cargo test` passes 4/4 (valid claim accepted; tampered proof / wrong secret / wrong wallet rejected). Deployed to testnet: `CA7KNPNRCI7I4RRWRJ4H5BJP4SLKPUEWJYSLYH4HWJTOVEDR7FEFU2X2`.
 - Deploy tx: `e8c33a455a41390dce6d26ac8501de145937d9f7b2a1deb989ff931dd7550062` (Stellar Expert).
-- On-chain `verify_claim` invocations returning true: `239d90aa0928d1b941dbfa8548753304d0da7ca2ecd7901854f7fbbaa2a8b31f` (reference), `7dbb8943e4ee101a25a355b28d8ee0e6ac048b022fb2b26a1270c9a87dc85d1f` (live in-browser claim). See `docs/evidence/onchain-verification.json`.
+- On-chain `verify_claim` invocations returning true: `239d90aa0928d1b941dbfa8548753304d0da7ca2ecd7901854f7fbbaa2a8b31f` (reference), `969ebb3b539dcc105b4f831f152fa11196d70816a77c4ddbbb5daf14ea2b503b` (live claim on the production site). See `docs/evidence/onchain-verification.json`.
 - Circuit: `circuits/grantdrop.circom` — non-degenerate Groth16; public signals `[nullifier, secretSquare, campaignId, walletBinding]` are bound by quadratic constraints so tampered signals fail verification.
 - Screenshots (`docs/assets/`): `grantdrop-desktop-accepted.png` (accepted + on-chain verify tx), `grantdrop-mobile-accepted.png`, `grantdrop-second-context.png` (signerless reopen), `grantdrop-invalid-rejected.png`, `grantdrop-reuse-blocked.png`, `grantdrop-receipt-not-found.png`, `grantdrop-contract-on-stellar-expert.png`.
 - Proof command: `npm run proof:verify`
