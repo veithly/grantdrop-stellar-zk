@@ -1,6 +1,0 @@
-name = "grantdrop-stellar-zk"
-compatibility_date = "2026-06-23"
-pages_build_output_dir = "dist"
-
-# GrantDrop is a static Cloudflare Pages app.
-# No D1, KV, R2, Queue, service, or secret binding is required for the submitted build.
