@@ -47,5 +47,17 @@ pitch/public-copy-scorecard.md
 pitch/recording/*.mp4
 pitch/recording/*.webm
 pitch/recording/*.wav
+pitch/recording/**/*.md
 docs/assets/grantdrop-video-contact-sheet.png
 video.config.json
+
+# Scratch / one-off notes (not part of the public submission)
+notes.md
+task_plan.md
+*.local
+
+# Build / derived artifacts kept local
+build/proofs/*.zkey
+build/proofs/*.json
+build/proofs/grantdrop_js/
+public/proofs/
